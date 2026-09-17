@@ -220,8 +220,7 @@ The comparative case for reading that trajectory as a conditionality story is we
 The obvious next step is to move from index trajectories to the documentary record of conditionality itself. The Commission's annual reports on Turkey run continuously from 1998 and offer a corpus in which the changing language of conditionality can be measured directly rather than inferred from outcomes.
 
 ::: {.callout-note appearance="simple"}
-Replication code and data for this analysis are available at github.com/ertugalagoz/turkey-eu-conditionality
-:::
+Replication code and data for this analysis are available at [github.com/ertugalagoz/turkey-eu-conditionality](https://github.com/ertugalagoz/turkey-eu-conditionality).
 
 ## References
 
