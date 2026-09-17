@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ertuğ Alagöz">
+<meta name="dcterms.date" content="2026-09-17">
+
+<title>Conditionality and Its Limits</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-62e2d20df198e8a01bb734742f2e28cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-and-method" id="toc-data-and-method" class="nav-link" data-scroll-target="#data-and-method">Data and method</a></li>
+  <li><a href="#the-turkish-trajectory" id="toc-the-turkish-trajectory" class="nav-link" data-scroll-target="#the-turkish-trajectory">The Turkish trajectory</a></li>
+  <li><a href="#comparative-context" id="toc-comparative-context" class="nav-link" data-scroll-target="#comparative-context">Comparative context</a></li>
+  <li><a href="#estimating-the-turn" id="toc-estimating-the-turn" class="nav-link" data-scroll-target="#estimating-the-turn">Estimating the turn</a></li>
+  <li><a href="#where-does-the-break-fall" id="toc-where-does-the-break-fall" class="nav-link" data-scroll-target="#where-does-the-break-fall">Where does the break fall?</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Conditionality and Its Limits</h1>
+<p class="subtitle lead">EU accession and democratic change in Turkey, 1990-2025</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ertuğ Alagöz </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 17, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Few cases have carried as much weight in the literature on European Union conditionality as Turkey, and few have been read in as many contradictory ways. Between 1999 and 2004 Turkey abolished the death penalty, dismantled the State Security Courts, curtailed the political role of the military and passed nine harmonisation packages alongside two substantial constitutional revisions. Within a decade of that reform wave the same country had become a standard reference point in the literature on democratic backsliding. The obvious question is whether the accession process drove the reforms, and if it did, when and why it stopped doing so.</p>
+<p>This note approaches that question descriptively, using the Varieties of Democracy indices to trace Turkey’s trajectory from 1990 to 2025 and to set it against the other candidate countries of the same period. It does three things. It shows how far the electoral and liberal components of democracy came apart during the decline. It estimates the rate of change in the reform and reversal periods. And rather than asserting where the turning point lies, it estimates the structural breaks in the series and reports what the estimation returns, including the part that does not fit.</p>
+<p>The central finding is that the reform peak does not coincide with the opening of accession negotiations but precedes it. Turkey’s electoral democracy score reaches its maximum in 2004, the year the European Council decided that negotiations would open, and falls from the moment negotiations actually began in October 2005. When the break is estimated rather than imposed, a single-break model places the turn in 2007, immediately after the Council suspended eight negotiating chapters in December 2006. What sustained reform, on this reading, was not a seat at the table but the continued credibility of the destination.</p>
+<p>The comparative evidence is consistent with that reading, but it supports far less than comparisons of this kind are usually made to bear. Most of the candidate countries that acceded owe their democratic levels to the collapse of communism rather than to anything the Union did afterwards, which disqualifies them as evidence one way or the other. One case survives that objection, and the argument below rests on it.</p>
+</section>
+<section id="data-and-method" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-method">Data and method</h2>
+<p>The analysis uses version 16 of the Varieties of Democracy dataset, which derives country-year estimates from the coded judgements of multiple country experts and aggregates them into a set of high-level indices through a Bayesian measurement model that adjusts for differences in coder reliability and threshold placement <span class="citation" data-cites="coppedge2011 pemstein2026 vdem2026">(<a href="#ref-coppedge2011" role="doc-biblioref"><span class="nocase">Coppedge et al.</span> 2011</a>, <a href="#ref-vdem2026" role="doc-biblioref">2026</a>; <a href="#ref-pemstein2026" role="doc-biblioref">Pemstein et al. 2026</a>)</span>. Two of those indices are used here. The electoral democracy index operationalises Dahl’s conception of polyarchy, combining the freedom and fairness of elections with freedom of expression, freedom of association and the breadth of the franchise <span class="citation" data-cites="dahl1971">(<a href="#ref-dahl1971" role="doc-biblioref">Dahl 1971</a>)</span>. The liberal democracy index incorporates that electoral component but adds constraints on the executive, the rule of law and the protection of individual liberties. Both run from 0 to 1.</p>
+<p>Using the two together is deliberate. The argument developed below turns on the gap between them, since the components of democracy that EU conditionality pressed hardest, judicial independence and fundamental rights, are the ones the liberal index captures and the electoral index does not. Chapters 23 and 24 of the acquis, which cover exactly this ground, were never opened in Turkey’s negotiations.</p>
+<p>Two estimation strategies follow. First, ordinary least squares fits a linear trend separately to the reform and reversal periods, giving an average annual rate of change in each. Second, the dating procedure developed by Bai and Perron and implemented in the <code>strucchange</code> package estimates the number and location of structural breaks in the series without being told where to look <span class="citation" data-cites="bai1998 zeileis2003">(<a href="#ref-bai1998" role="doc-biblioref">Bai and Perron 1998</a>; <a href="#ref-zeileis2003" role="doc-biblioref">Zeileis et al. 2003</a>)</span>.</p>
+<p>Case selection requires more comment than it usually receives, and is treated in the comparative section rather than settled here.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtering on ISO country codes rather than country names: accented characters</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># are fragile across operating systems and file encodings, country codes are not.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>turkey <span class="ot">&lt;-</span> vdem <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country_text_id <span class="sc">==</span> <span class="st">"TUR"</span>, year <span class="sc">&gt;=</span> <span class="dv">1990</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">polyarchy =</span> v2x_polyarchy,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">libdem    =</span> v2x_libdem) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(year)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>turkey_long <span class="ot">&lt;-</span> turkey <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">c</span>(polyarchy, libdem),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"index"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">index =</span> <span class="fu">recode</span>(index,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                        <span class="at">polyarchy =</span> <span class="st">"Electoral democracy"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                        <span class="at">libdem    =</span> <span class="st">"Liberal democracy"</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>comparison <span class="ot">&lt;-</span> vdem <span class="sc">|&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country_text_id <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"TUR"</span>, <span class="st">"POL"</span>, <span class="st">"ROU"</span>, <span class="st">"HRV"</span>), year <span class="sc">&gt;=</span> <span class="dv">1990</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">country =</span> country_name, year, <span class="at">polyarchy =</span> v2x_polyarchy) <span class="sc">|&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(country, year)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="the-turkish-trajectory" class="level2">
+<h2 class="anchored" data-anchor-id="the-turkish-trajectory">The Turkish trajectory</h2>
+<p>The shape of <a href="#fig-turkey" class="quarto-xref">Figure&nbsp;1</a> is easy to summarise and harder to explain. The electoral democracy index sits close to 0.52 through the early 1990s, begins climbing after the Helsinki European Council granted Turkey candidate status in December 1999, and peaks at 0.66 in 2004. It then falls without interruption for a decade, reaching 0.29 by 2017 and flattening there. The liberal democracy index follows the same path at a lower level, rising from 0.35 to 0.51 and falling to 0.11.</p>
+<p>Stated in absolute terms the two declines look similar, and the gap between the series stays within a narrow band throughout. In proportional terms they are not similar at all. Measured from their common 2004 peak, the electoral index loses 56 per cent of its value and the liberal index loses 80 per cent. What eroded fastest was not the holding of elections, which continued at high turnout and with genuine if increasingly unequal competition, but the constraints surrounding them: judicial independence, administrative legality, and the civil liberties that make electoral competition meaningful in the first place. This is the configuration Levitsky and Way describe as competitive authoritarianism, and the diagnosis has been applied to the Turkish case directly <span class="citation" data-cites="levitsky2010 esen2016">(<a href="#ref-levitsky2010" role="doc-biblioref">Levitsky and Way 2010</a>; <a href="#ref-esen2016" role="doc-biblioref">Esen and Gumuscu 2016</a>)</span>.</p>
+<p>The pattern bears on the conditionality argument in a specific way. If the accession process exerted its strongest pull on judicial reform and fundamental rights, and if those are the areas that subsequently collapsed furthest, then whatever the process achieved in that domain proved the least durable. The reforms that survived were those with domestic constituencies behind them; those that depended on external pressure did not outlive the pressure. Turkish scholarship on de-Europeanisation has made a parallel argument from institutional evidence <span class="citation" data-cites="saatcioglu2016 aydinduzgit2016">(<a href="#ref-saatcioglu2016" role="doc-biblioref">Saatçioğlu 2016</a>; <a href="#ref-aydinduzgit2016" role="doc-biblioref">Aydın-Düzgit and Kaliber 2016</a>)</span>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(turkey_long, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> value, <span class="at">colour =</span> index)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="dv">1999</span>, <span class="dv">2005</span>, <span class="dv">2016</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey80"</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1999</span>, <span class="dv">2005</span>, <span class="dv">2016</span>), <span class="at">y =</span> <span class="fl">0.99</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Helsinki: candidate status"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Accession talks open"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Coup attempt, state of emergency"</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.4</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="dv">3</span>, <span class="at">colour =</span> <span class="st">"grey30"</span>) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Index (0-1)"</span>, <span class="at">colour =</span> <span class="cn">NULL</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: V-Dem"</span>) <span class="sc">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-turkey" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-turkey-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-turkey-1.png" class="img-fluid figure-img" width="1600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-turkey-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Electoral and liberal democracy in Turkey, 1990-2025. Dashed lines mark the Helsinki European Council (1999), the opening of accession negotiations (2005), and the coup attempt and subsequent state of emergency (2016).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="comparative-context" class="level2">
+<h2 class="anchored" data-anchor-id="comparative-context">Comparative context</h2>
+<p>A single country’s trajectory invites the objection that it reflects domestic politics and nothing else. The usual remedy is to place it beside candidates that completed accession. <a href="#fig-comparison" class="quarto-xref">Figure&nbsp;2</a> does so for Poland, Romania and Croatia, but the three cases are not equivalent, and treating them as a set would conceal the problem rather than address it.</p>
+<p>The problem is 1989. Poland’s electoral democracy index stands near 0.74 in 1990 and reaches 0.89 by 1992, where it then remains for more than two decades. That level was established by the collapse of communism and the transition that followed it, years before candidate status and a full decade before accession. Nothing the Union did in the 1990s or 2000s produced it, and no comparison of post-accession levels can therefore be read as evidence of a conditionality effect. The same objection applies, with qualifications noted below, across the Central European cases generally. A comparison that lines up EU members at high values and Turkey at a low one is largely recovering the geography of the Cold War.</p>
+<p>Poland’s later history is still instructive, but only negatively. Between 2015 and 2022 the index fell from 0.88 to 0.58, a decline steeper in absolute terms than anything in the Turkish series over a comparable span. Membership plainly did not immunise it, which is consistent with Sedelmeier’s finding that post-accession leverage is weak and inconsistently applied <span class="citation" data-cites="sedelmeier2014">(<a href="#ref-sedelmeier2014" role="doc-biblioref">Sedelmeier 2014</a>)</span>. The subsequent recovery to 0.77 after the 2023 parliamentary election is likewise a domestic electoral outcome; attributing it to European influence would be an overreach, since the mechanism that failed to prevent the decline cannot plausibly be credited with reversing it. Poland tells us what conditionality does not do, and nothing more.</p>
+<p>Romania is an intermediate case and the 1989 objection fits it less cleanly. Its transition was partial and contested, and the index reflects that: it sits at 0.52 in 1990, effectively the same value as Turkey, and remains between roughly 0.55 and 0.61 throughout the 1990s. There is no transition jump of the Polish kind. The climb is slow and comes later, reaching 0.68 by 2011 and a maximum of 0.72 in 2015, which is to say across the accession decade rather than at the moment communism ended. That much is weakly consistent with a conditionality effect, but two things cut against reading it as one. The confounding is severe, since the same period contains NATO accession, generational change in the political elite and the delayed working-out of the 1989 settlement. And the gain did not hold: by 2025 Romania has fallen back to 0.61, close to where it stood before accession. Romania cannot settle the question either.</p>
+<p>That leaves Croatia, and Croatia is where the comparison does its work. Yugoslavia was not a Warsaw Pact state; it had broken with the Soviet bloc in 1948 and pursued non-alignment thereafter, so the end of communism in Central Europe does not explain the Croatian trajectory. What Croatia faced in the 1990s was war and the authoritarian nationalism of the Tuđman government, and its index accordingly stands at 0.24 in 1991, the first year for which the dataset records an independent Croatia and under half of Turkey’s value at the same date. Democratisation begins in 2000, after Tuđman’s death and the opposition victory, not in 1989.</p>
+<p>The parallel with Turkey from that point is unusually tight. Both countries opened accession negotiations on 3 October 2005, on the same day and at the same intergovernmental conference. From that shared moment the two series separate completely. Croatia stands at 0.78 in 2005 and climbs to 0.85 by 2011; Turkey stands at 0.64 and falls to 0.52 over the same six years. By 2025 Croatia is at 0.69 and Turkey at 0.29. Croatia has itself given back a good deal of its peak, which is worth stating plainly rather than glossing, but the two countries end the period more than forty index points apart having begun it with Croatia far below. Comparable formal status produced incomparable outcomes, which suggests that the opening of negotiations carried little independent force. What differed was whether accession remained a plausible destination. Croatia’s negotiations proceeded to closure within eight years. Turkey’s produced eight suspended chapters in December 2006, further blockages in 2009, and a formal acknowledgement of standstill in 2018.</p>
+<p>This is a paired comparison and it should be presented as one. It does not establish that the accession process caused Croatian democratisation or Turkish decline. What it does establish is that the standard explanation for the post-communist cases, namely that these countries were already democratic before the Union arrived, cannot be extended to the one case where the accession process and the divergence coincide most closely in time.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comparison, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> polyarchy, <span class="at">colour =</span> country)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Polyarchy index (0-1)"</span>, <span class="at">colour =</span> <span class="cn">NULL</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: V-Dem"</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-comparison-1.png" class="img-fluid figure-img" width="1600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Electoral democracy in four EU candidate countries, 1990-2025. Poland acceded in 2004, Romania in 2007 and Croatia in 2013. Croatia and Turkey opened accession negotiations on the same day, 3 October 2005.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="estimating-the-turn" class="level2">
+<h2 class="anchored" data-anchor-id="estimating-the-turn">Estimating the turn</h2>
+<p><a href="#tbl-trends" class="quarto-xref">Table&nbsp;1</a> fits a linear trend to each of the two periods. The period boundary is placed at the opening of negotiations in October 2005, a date chosen on theoretical rather than empirical grounds; the following section tests whether the data agree.</p>
+<p>Between 1999 and 2004 the electoral democracy index rose by 0.019 points a year on average. Between 2005 and 2011 it fell by 0.024 points a year. The asymmetry is the point worth dwelling on: the reversal ran roughly a quarter faster than the advance that preceded it. Five years of reform were undone in four.</p>
+<p>The goodness-of-fit statistics carry a second and less obvious message. An R-squared near 0.92 in both periods means a straight line describes each period almost completely, which in turn means neither the rise nor the fall was driven by a discrete shock. Both were steady, cumulative movements sustained across multiple parliamentary terms. That is consistent with what the comparative literature now emphasises about contemporary democratic decline: it proceeds through the incremental accumulation of legal and administrative changes rather than through a single rupture <span class="citation" data-cites="bermeo2016">(<a href="#ref-bermeo2016" role="doc-biblioref">Bermeo 2016</a>)</span>. The absence of a visible discontinuity at 2016, which the figure shows clearly, makes the same point from the other direction. The coup attempt and the state of emergency accelerated a decline that was already eight years old.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rise <span class="ot">&lt;-</span> <span class="fu">lm</span>(polyarchy <span class="sc">~</span> <span class="fu">I</span>(year <span class="sc">-</span> <span class="dv">1999</span>),</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> <span class="fu">filter</span>(turkey, year <span class="sc">&gt;=</span> <span class="dv">1999</span>, year <span class="sc">&lt;=</span> <span class="dv">2004</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fall <span class="ot">&lt;-</span> <span class="fu">lm</span>(polyarchy <span class="sc">~</span> <span class="fu">I</span>(year <span class="sc">-</span> <span class="dv">2005</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> <span class="fu">filter</span>(turkey, year <span class="sc">&gt;=</span> <span class="dv">2005</span>, year <span class="sc">&lt;=</span> <span class="dv">2011</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="st">"1999-2004"</span> <span class="ot">=</span> rise, <span class="st">"2005-2011"</span> <span class="ot">=</span> fall),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">coef_rename =</span> <span class="fu">c</span>(<span class="st">"I(year - 1999)"</span> <span class="ot">=</span> <span class="st">"Year"</span>, <span class="st">"I(year - 2005)"</span> <span class="ot">=</span> <span class="st">"Year"</span>),</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">gof_map =</span> <span class="fu">c</span>(<span class="st">"nobs"</span>, <span class="st">"r.squared"</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">stars =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">notes =</span> <span class="fu">paste</span>(</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Standard errors in parentheses. Year is centred on the first year of each"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"period, so the intercept is the fitted value in that year. Significance"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests are omitted: with annual observations and serially correlated"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"residuals, conventional standard errors are understated."</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">"markdown"</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-trends" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-trends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Ordinary least squares estimates of the annual change in the electoral democracy index, by period.
+</figcaption>
+<div aria-describedby="tbl-trends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>1999-2004</th>
+<th>2005-2011</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td>0.567</td>
+<td>0.650</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>(0.008)</td>
+<td>(0.012)</td>
+</tr>
+<tr class="odd">
+<td>Year</td>
+<td>0.019</td>
+<td>-0.024</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>(0.002)</td>
+<td>(0.003)</td>
+</tr>
+<tr class="odd">
+<td>Num.Obs.</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>R2</td>
+<td>0.938</td>
+<td>0.916</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td colspan="3">Standard errors in parentheses. Year is centred on the first year of each period, so the intercept is the fitted value in that year. Significance tests are omitted: with annual observations and serially correlated residuals, conventional standard errors are understated.</td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="where-does-the-break-fall" class="level2">
+<h2 class="anchored" data-anchor-id="where-does-the-break-fall">Where does the break fall?</h2>
+<p>The previous section has an obvious weakness, and it is better to state it than to wait for a reader to find it. The period boundary was chosen after looking at the plotted series. Selecting a breakpoint from the data and then testing a model built around it inflates apparent fit, and the resulting estimates cannot be treated as evidence that the break belongs where it was placed. There are two defences. The weaker one is that October 2005 is a date supplied by the theory rather than by the series. The stronger one is to stop choosing and let the break be estimated.</p>
+<p>The Bai-Perron procedure does that, scanning the series for the number and location of structural changes that best partition it. The results appear below, in full rather than selectively, since reporting only the solutions that agree with a prior periodisation would defeat the purpose of estimating them.</p>
+<p>The three- and four-break solutions both locate a break at 2004, independently of anything imposed here, which supports the periodisation used above. The single-break solution does not. It selects 2007.</p>
+<p>That result should be taken seriously rather than set aside, and it is not straightforwardly favourable to the periodisation used in the previous section. The year 2007 follows immediately on the December 2006 decision of the Council to suspend eight negotiating chapters over Turkey’s refusal to extend the Additional Protocol to Cyprus. If the sharpest single discontinuity in thirty-five years of data falls there rather than at the opening of negotiations, then the opening itself marks no detectable change in the series, and what registers instead is the moment the membership prospect became visibly conditional on a dispute Turkey was unwilling to settle. The external incentives model anticipates something of this kind, in that rule adoption responds to the size and probability of the reward rather than to procedural milestones <span class="citation" data-cites="schimmelfennig2004">(<a href="#ref-schimmelfennig2004" role="doc-biblioref">Schimmelfennig and Sedelmeier 2004</a>)</span>. A reader unpersuaded by that reading is entitled to treat the 2007 result as evidence against a negotiation-opening account, and the data presented here do not rule that out.</p>
+<p>One caution about the selection criterion itself. The Bayesian information criterion is minimised at five breaks, but those five fall at 1997, 2002, 2007, 2012 and 2017, at almost exactly five-year intervals. That regularity is an artefact rather than a finding. With a minimum segment length of five observations, the algorithm approximates a smooth curve with as many short linear segments as it is permitted, and the criterion rewards the improved fit. <a href="#fig-bic" class="quarto-xref">Figure&nbsp;3</a> shows the criterion flattening after two breaks, which is to say that it does not meaningfully discriminate among the three-, four- and five-break solutions.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bp <span class="ot">&lt;-</span> <span class="fu">breakpoints</span>(polyarchy <span class="sc">~</span> year, <span class="at">data =</span> turkey, <span class="at">h =</span> <span class="fl">0.15</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>break_years <span class="ot">&lt;-</span> <span class="cf">function</span>(object, n) {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  turkey<span class="sc">$</span>year[<span class="fu">breakpoints</span>(object, <span class="at">breaks =</span> n)<span class="sc">$</span>breakpoints]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">years  =</span> <span class="fu">map_chr</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, \(n) <span class="fu">paste</span>(<span class="fu">break_years</span>(bp, n), <span class="at">collapse =</span> <span class="st">", "</span>))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Number of breaks"</span>, <span class="st">"Estimated break years"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Number of breaks</th>
+<th style="text-align: left;">Estimated break years</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2007</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2003, 2015</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">1997, 2004, 2015</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">1997, 2004, 2010, 2015</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-bic" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-bic-1.png" class="img-fluid figure-img" width="1600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Bayesian information criterion and residual sum of squares by number of estimated breakpoints.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<p>None of the above identifies a causal effect. What is shown is a set of descriptive patterns and their timing, and timing alone cannot separate the influence of the accession process from the domestic political changes that ran alongside it. The most serious threat is selection: candidate status and negotiating dates were not assigned at random but reflected judgements about where reform was already under way, which means the Union’s independent contribution is likely to be overstated by any comparison of this kind.</p>
+<p>The comparative design compounds that problem rather than solving it. Once Poland and Romania are set aside for the reasons given above, the comparison reduces to a single pair, Turkey and Croatia. Two cases cannot rule out the many differences between them that have nothing to do with accession, among them the scale of the countries, their religious and geopolitical position in European debate, and the fact that Croatia’s democratisation began from a post-war settlement in which external actors were already deeply involved.</p>
+<p>The estimation carries its own constraints. The trend models rest on six and seven annual observations. Residuals in a series of this sort are serially correlated, so conventional standard errors are understated and no significance tests are reported. The structural break procedure assumes a piecewise linear data-generating process, which a smoothly curving series does not satisfy, and the artefact discussed above follows directly from that mismatch.</p>
+<p>The measures themselves are estimates rather than observations. V-Dem aggregates expert codings and publishes uncertainty intervals that are not displayed here; incorporating them would widen every comparison drawn above, particularly the smaller year-on-year movements.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Turkey’s democratic reforms peaked at the moment the prospect of membership was most credible, not at the moment negotiations began, and they reversed faster than they had advanced. The liberal components of democracy, the ones EU conditionality addressed most directly, fell furthest and have not recovered.</p>
+<p>The comparative case for reading that trajectory as a conditionality story is weaker than it is usually made to look. The post-communist candidates cannot carry it, because their democratic levels were set in 1989 rather than by anything the Union did afterwards. Croatia can, because it was not a Soviet bloc state, because its democratisation dates from 2000, and because it began accession negotiations on the same day as Turkey and ended them eight years later. On that single pair, the reasonable conclusion is narrow: the opening of negotiations changed nothing by itself, and what separated the two trajectories was whether the destination stayed credible.</p>
+<p>The obvious next step is to move from index trajectories to the documentary record of conditionality itself. The Commission’s annual reports on Turkey run continuously from 1998 and offer a corpus in which the changing language of conditionality can be measured directly rather than inferred from outcomes.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Replication code and data for this analysis are available at <a href="https://github.com">github.com/…</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-aydinduzgit2016" class="csl-entry" role="listitem">
+Aydın-Düzgit, Senem, and Alper Kaliber. 2016. <span>“Encounters with <span>Europe</span> in an Era of Domestic and International Turmoil: Is <span>Turkey</span> a de-<span>Europeanising</span> Candidate Country?”</span> <em>South European Society and Politics</em> 21 (1): 1–14.
+</div>
+<div id="ref-bai1998" class="csl-entry" role="listitem">
+Bai, Jushan, and Pierre Perron. 1998. <span>“Estimating and Testing Linear Models with Multiple Structural Changes.”</span> <em>Econometrica</em> 66 (1): 47–78.
+</div>
+<div id="ref-bermeo2016" class="csl-entry" role="listitem">
+Bermeo, Nancy. 2016. <span>“On Democratic Backsliding.”</span> <em>Journal of Democracy</em> 27 (1): 5–19.
+</div>
+<div id="ref-vdem2026" class="csl-entry" role="listitem">
+Coppedge, Michael, John Gerring, Carl Henrik Knutsen, et al. 2026. <em><span>V-Dem</span> <span>Country-Year</span> Dataset <span class="nocase">v16</span></em>. Varieties of Democracy (V-Dem) Project. <a href="https://doi.org/10.23696/vdemds26">https://doi.org/10.23696/vdemds26</a>.
+</div>
+<div id="ref-coppedge2011" class="csl-entry" role="listitem">
+<span class="nocase">Coppedge, Michael, John Gerring, Staffan I. Lindberg, et al.</span> 2011. <span>“Conceptualizing and Measuring Democracy: A New Approach.”</span> <em>Perspectives on Politics</em> 9 (2): 247–67.
+</div>
+<div id="ref-dahl1971" class="csl-entry" role="listitem">
+Dahl, Robert A. 1971. <em>Polyarchy: Participation and Opposition</em>. Yale University Press.
+</div>
+<div id="ref-esen2016" class="csl-entry" role="listitem">
+Esen, Berk, and Sebnem Gumuscu. 2016. <span>“Rising Competitive Authoritarianism in <span>Turkey</span>.”</span> <em>Third World Quarterly</em> 37 (9): 1581–606.
+</div>
+<div id="ref-levitsky2010" class="csl-entry" role="listitem">
+Levitsky, Steven, and Lucan A. Way. 2010. <em>Competitive Authoritarianism: Hybrid Regimes After the <span>Cold War</span></em>. Cambridge University Press.
+</div>
+<div id="ref-pemstein2026" class="csl-entry" role="listitem">
+Pemstein, Daniel, Kyle L. Marquardt, Eitan Tzelgov, et al. 2026. <em>The <span>V-Dem</span> Measurement Model: Latent Variable Analysis for Cross-National and Cross-Temporal Expert-Coded Data</em>. V-Dem Working Paper No. 21. University of Gothenburg, Varieties of Democracy Institute.
+</div>
+<div id="ref-saatcioglu2016" class="csl-entry" role="listitem">
+Saatçioğlu, Beken. 2016. <span>“De-<span>Europeanisation</span> in <span>Turkey</span>: The Case of the Rule of Law.”</span> <em>South European Society and Politics</em> 21 (1): 133–46.
+</div>
+<div id="ref-schimmelfennig2004" class="csl-entry" role="listitem">
+Schimmelfennig, Frank, and Ulrich Sedelmeier. 2004. <span>“Governance by Conditionality: <span>EU</span> Rule Transfer to the Candidate Countries of Central and Eastern Europe.”</span> <em>Journal of European Public Policy</em> 11 (4): 661–79.
+</div>
+<div id="ref-sedelmeier2014" class="csl-entry" role="listitem">
+Sedelmeier, Ulrich. 2014. <span>“Anchoring Democracy from Above? The <span>European Union</span> and Democratic Backsliding in <span>Hungary</span> and <span>Romania</span> After Accession.”</span> <em>JCMS: Journal of Common Market Studies</em> 52 (1): 105–21.
+</div>
+<div id="ref-zeileis2003" class="csl-entry" role="listitem">
+Zeileis, Achim, Christian Kleiber, Walter Krämer, and Kurt Hornik. 2003. <span>“Testing and Dating of Structural Changes in Practice.”</span> <em>Computational Statistics and Data Analysis</em> 44 (1–2): 109–23.
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
