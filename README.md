@@ -5,7 +5,7 @@
 A short reproducible analysis of Turkey's democratic trajectory across the EU accession
 process, using the Varieties of Democracy indices.
 
-📄 **[Read the analysis] https://ertugalagoz.github.io/turkey-eu-conditionality/
+**[Read the analysis](https://ertugalagoz.github.io/turkey-eu-conditionality/)**
 
 ## Summary
 
